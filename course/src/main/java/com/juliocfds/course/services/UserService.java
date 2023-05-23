@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import com.juliocfds.course.entities.User;
 import com.juliocfds.course.repositories.UserRepository;
-
 @Service
 public class UserService {
 	
@@ -22,6 +21,10 @@ public class UserService {
 	public User findById(Long id) {
 		Optional<User> obj = repository.findById(id);
 		return obj.get();
+	}
+	   
+	public User insert(User obj) {
+		return repository.save(obj);
 	}
 	
 }
